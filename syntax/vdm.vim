@@ -1,9 +1,9 @@
 " Vim syntax file
 " Language:     VDM
 " Maintainer:   Rui Carlos Goncalves <rui.c.mcc@gmail.com>
-" Last Change:  May 21, 2007
+" Last Change:  July 3, 2007
 "
-" Version:      2.4
+" Version:      2.5
 " Url:          http://www.rcg-pt.net/prog/vdm.vim
 if version < 600
   syn clear
@@ -25,7 +25,7 @@ syn keyword     vdmStatement    cases others
 syn keyword     vdmStatement    pre post inv 
 syn keyword     vdmStatement    compose
 syn keyword     vdmStatement    state init
-syn keyword     vdmStatement    forall exits exists1 iota
+syn keyword     vdmStatement    forall exists exists1 iota
 syn keyword     vdmStatement    lambda
 syn keyword     vdmStatement    undefined skip
 syn keyword     vdmStatement    dcl
