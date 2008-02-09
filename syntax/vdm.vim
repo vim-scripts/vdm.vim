@@ -1,10 +1,11 @@
 " Vim syntax file
 " Language:     VDM
-" Maintainer:   Rui Carlos Goncalves <rui.c.mcc@gmail.com>
-" Last Change:  July 3, 2007
+" Maintainer:   Rui Carlos A. Goncalves <rcgoncalves.pt@gmail.com>
+" Last Change:  July 20, 2007
 "
-" Version:      2.5
-" Url:          http://www.rcg-pt.net/prog/vdm.vim
+" Version:      2.6
+" Url:          http://www.rcg-pt.net/programacao/vdm.vim.gz
+
 if version < 600
   syn clear
 elseif exists("b:current_syntax")
@@ -56,12 +57,8 @@ syn match       vdmCharacter    "[^a-zA-Z0-9_']'\([^\\]\|\\[^']\+\|\\'\)'"lc=1 c
 syn match       vdmCharacter    "^'\([^\\]\|\\[^']\+\|\\'\)'" contains=vdmSpecialChar
 syn region      vdmString       start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=vdmSpecialChar
 
-syn sync match  vdmStrSyncSkip  +\\\\\|\\"+
-syn sync match  vdmStringSync   grouphere       vdmString       +"+
-syn sync match  vdmStringSync   groupthere      NONE            +"+
-
 " Other types
-syn match       vdmType         "\<\(set\|seq\|seq1\) of\>"
+syn match       vdmType         "\<\(set\|seq\|seq1\) *of\>"
 syn region      vdmNormalMap1   matchgroup=vdmType start="\<\(map\|inmap\)\>" end="\<to\>" contains=vdmType,vdmNormalMap2,vdmStatement,vdmOperator,vdmConstant
 syn region      vdmNormalMap2   matchgroup=vdmType start="\<\(map\|inmap\)\>" end="\<to\>" contains=vdmType,vdmNormalMap1,vdmStatement,vdmOperator,vdmConstant contained
 
@@ -69,12 +66,12 @@ syn region      vdmNormalMap2   matchgroup=vdmType start="\<\(map\|inmap\)\>" en
 syn match       vdmStatement    "\<end\>"
 syn match       vdmStatement    "\<of\>"
 syn match       vdmStatement    "\<in\>"
-syn match       vdmStatement    "\<is not yet specified\>"
+syn match       vdmStatement    "\<is *not *yet *specified\>"
 syn match       vdmStatement    "\<to\>"
-syn match       vdmStatement    "\<\(for all\|for\)\>"
+syn match       vdmStatement    "\<\(for *all\|for\)\>"
 
 " Other functions
-syn match       vdmFunction     "\<in set\>"
+syn match       vdmFunction     "\<in *set\>"
 syn match       vdmFunction     "\<\(mk_[a-zA-Z][a-zA-Z0-9_'`]*\|mk_\)\>"
 syn match       vdmFunction     "\<\(is_[a-zA-Z][a-zA-Z0-9_']*\|is_\)\>"
 syn match       vdmFunction     "\<init_[a-zA-Z][a-zA-Z0-9_']*\>"
