@@ -4,7 +4,7 @@
 " Last Change:  July 20, 2007
 "
 " Version:      2.6
-" Url:          http://www.rcg-pt.net/programacao/vdm.vim.gz
+" Url:          http://rcgoncalves.net/files/vdm.zip
 
 if version < 600
   syn clear
